@@ -335,3 +335,4 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
     .author = "Google, Inc.",
     .methods = &lights_module_methods,
 };
+
