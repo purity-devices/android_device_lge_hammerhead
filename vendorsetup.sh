@@ -14,7 +14,6 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_hammerhead.mk \
-    $(LOCAL_DIR)/purity_hammerhead.mk
+add_lunch_combo aosp_hammerhead-userdebug
+add_lunch_combo purity_hammerhead-userdebug
 
