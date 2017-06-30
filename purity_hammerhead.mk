@@ -41,4 +41,10 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=google/hammerhead/hammerhead:6.0.1/M4B30Z/3437181:user/release-keys \
     PRIVATE_BUILD_DESC="hammerhead-user 6.0.1 M4B30Z 3437181 release-keys"
 
+# Kernel inline build
+TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
+TARGET_KERNEL_CONFIG := lineageos_hammerhead_defconfig
+TARGET_VARIANT_CONFIG := lineageos_hammerhead_defconfig
+TARGET_SELINUX_CONFIG := lineageos_hammerhead_defconfig
+
 

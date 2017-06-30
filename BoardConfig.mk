@@ -20,27 +20,29 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := krait
 
+# PowerHAL
+TARGET_PROVIDES_POWERHAL := true
+
 TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_CONFIG := lineageos_hammerhead_defconfig
-TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
-TARGET_KERNEL_APPEND_DTB := true
 
 TARGET_NO_BOOTLOADER := true
 
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hammerhead user_debug=31 maxcpus=2 msm_watchdog_v2.enable=1
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 
 TOUCH_BOOST_DEBUG := false
+
+TARGET_QCOM_DISPLAY_VARIANT := caf-msm8974
 
 # Audio/media
 TARGET_QCOM_AUDIO_VARIANT := caf-msm8974
 TARGET_QCOM_MEDIA_VARIANT := caf-msm8974
-
-# Display
-TARGET_QCOM_DISPLAY_VARIANT := caf-msm8974
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -167,15 +169,14 @@ USE_MINIKIN := true
 EXTENDED_FONT_FOOTPRINT := true
 
 #TWRP
-DEVICE_RESOLUTION := 1080x1920
+TW_THEME := portrait_hdpi
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
-TW_NO_USB_STORAGE := false
-TW_INCLUDE_JB_CRYPTO := true
+TW_NO_USB_STORAGE := true
+TW_INCLUDE_CRYPTO := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 # The real path for this is /sys/devices/mdp.0/qcom,cmdss_fb_primary.160/leds/lcd-backlight/brightness but the comma doesn't compile correctly
 TW_BRIGHTNESS_PATH := "/sys/devices/mdp.0/qcom\x2cmdss_fb_primary.160/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
-TW_NO_SCREEN_TIMEOUT := true
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\" 
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
