@@ -47,7 +47,8 @@ PRODUCT_PACKAGES += \
     libmmcamera_interface \
     libmmjpeg_interface \
     mm-jpeg-interface-test \
-    mm-qcamera-app
+    mm-qcamera-app \
+    SnapdragonCamera
 
 # Charging Mode
 PRODUCT_PACKAGES += \
